@@ -1,6 +1,6 @@
-#N canvas 353 213 469 520 12;
-#N canvas 324 134 1388 906 \$0-pitchget 0;
-#N canvas 402 241 1223 851 \$0-arrayplay 0;
+#N canvas 135 308 469 520 12;
+#N canvas 322 134 1388 906 \$0-pitchget 0;
+#N canvas 398 241 1223 851 \$0-arrayplay 0;
 #X obj 361 167 t f f b;
 #X obj 431 198 samplerate~;
 #X obj 431 223 * 0.001;
@@ -10,7 +10,7 @@
 #X obj 170 599 outlet~;
 #X obj 290 23 inlet;
 #X text 339 24 trigger start;
-#X obj 604 178 \$0;
+#X obj 674 155 \$0;
 #X obj 819 69 array define \$0-pitchdone 12;
 #X obj 823 100 array define \$0-pitchloc 12;
 #X obj 706 562 outlet;
@@ -35,7 +35,7 @@
 #X text 29 492 sound;
 #X obj 26 581 outlet~;
 #X text 182 568 readsig;
-#X msg 604 203 \; \$1-pitchdone const -1 \; \$1-pitchloc const -1,
+#X msg 674 180 \; \$1-pitchdone const -1 \; \$1-pitchloc const -1,
 f 24;
 #X obj 25 535 tabread4~ \$0-sndarray;
 #X obj 361 142 array size \$0-sndarray;
@@ -45,6 +45,9 @@ f 24;
 #X obj 520 647 s \$0-progress_r;
 #X obj 599 604 f;
 #X obj 596 527 t b b;
+#X obj 677 378 array size \$0-pitchloc;
+#X obj 682 419 array size \$0-pitchdone;
+#X obj 700 316 v \$0-numpitches;
 #X connect 0 0 20 1;
 #X connect 0 1 27 0;
 #X connect 0 2 1 0;
@@ -84,6 +87,7 @@ f 24;
 #X connect 30 3 23 0;
 #X connect 30 4 29 0;
 #X connect 30 4 28 0;
+#X connect 30 4 45 0;
 #X connect 35 0 32 0;
 #X connect 36 0 0 0;
 #X connect 37 0 29 0;
@@ -92,6 +96,8 @@ f 24;
 #X connect 41 0 40 0;
 #X connect 42 0 41 0;
 #X connect 42 1 24 0;
+#X connect 45 0 43 0;
+#X connect 45 0 44 0;
 #X restore 587 149 pd \$0-arrayplay;
 #X obj 748 185 t b b;
 #X obj 1090 189 openpanel;
@@ -284,7 +290,7 @@ f 24;
 0 15 -262144 -1 -1;
 #X symbolatom 149 248 30 0 0 0 sound #0-sndname -, f 30;
 #X obj 111 573 nbx 10 20 0 128 0 0 \$0-numpitches \$0-numpitches_r
-number_of_pitches 0 -8 0 15 -262144 -1 -1 12 256;
+number_of_pitches 0 -8 0 15 -262144 -1 -1 24 256;
 #X obj 106 326 bng 30 250 50 0 \$0-play empty play_sound 35 15 0 15
 -262144 -1 -1;
 #X obj 106 282 bng 30 250 50 0 \$0-load empty load_sound 35 15 0 15
@@ -292,9 +298,9 @@ number_of_pitches 0 -8 0 15 -262144 -1 -1 12 256;
 #X obj 104 417 bng 30 250 50 0 \$0-click empty read_results 35 15 0
 15 -262144 -1 -1;
 #X obj 399 248 nbx 10 20 -1e+37 1e+37 0 0 empty \$0-elapsed_r pos_in_ms
-0 -8 0 15 -232576 -1 -1 0 256;
+0 -8 0 15 -232576 -1 -1 90500 256;
 #X obj 112 527 nbx 10 20 0 128 0 0 \$0-offset \$0-offset_r starting_midi_note
-0 -8 0 15 -262144 -1 -1 60 256;
+0 -8 0 15 -262144 -1 -1 47 256;
 #X obj 327 573 nbx 10 20 0 128 0 0 \$0-msthresh \$0-msthresh_r ms_thresh
 0 -8 0 15 -262144 -1 -1 100 256;
 #X obj 328 527 nbx 10 20 0 128 0 0 \$0-dbthresh \$0-dbthresh_r db_thresh
@@ -315,13 +321,13 @@ number_of_pitches 0 -8 0 15 -262144 -1 -1 12 256;
 #X obj 104 372 bng 30 250 50 0 \$0-stop empty stop_sound 35 15 0 15
 -262144 -1 -1;
 #X obj 488 342 tgl 50 0 empty \$0-done_r done 0 -7 0 15 -232576 -1
--1 0 1;
+-1 1 1;
 #X obj 591 94 t b b b, f 21;
 #X obj 833 214 s \$0-done_r;
 #X msg 891 174 0;
 #X msg 829 184 1;
-#X obj 239 287 hsl 300 30 0 35430.7 0 0 empty \$0-progress_r progress
--2 -8 0 15 -232576 -1 -1 0 1;
+#X obj 239 287 hsl 300 30 0 90702.9 0 0 empty \$0-progress_r progress
+-2 -8 0 15 -232576 -1 -1 29900 1;
 #X connect 0 0 5 0;
 #X connect 0 1 5 1;
 #X connect 0 2 5 2;
