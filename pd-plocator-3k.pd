@@ -1,5 +1,5 @@
 #N canvas 133 308 469 520 12;
-#N canvas 320 134 1388 906 \$0-pitchget 0;
+#N canvas 314 134 1388 906 \$0-pitchget 0;
 #N canvas 398 241 1223 851 \$0-arrayplay 0;
 #X obj 361 167 t f f b;
 #X obj 431 198 samplerate~;
@@ -103,7 +103,7 @@ f 24;
 #X obj 1090 189 openpanel;
 #X obj 1090 214 pack s \$0;
 #X obj 1090 264 soundfiler;
-#N canvas 798 151 1145 944 \$0-pitchrecorder 0;
+#N canvas 792 151 1145 944 \$0-pitchrecorder 0;
 #X obj 395 42 inlet;
 #X obj 207 96 inlet~;
 #X text 225 70 read position;
@@ -294,7 +294,7 @@ f 24;
 -66577 0;
 #X obj 104 465 bng 30 250 50 0 \$0-write empty write_results 35 15
 0 15 -262144 -1 -1;
-#X symbolatom 149 248 30 0 0 0 sound #0-sndname -, f 30;
+#X symbolatom 149 248 49 0 0 0 sound #0-sndname -, f 49;
 #X obj 111 573 nbx 10 20 0 128 0 0 \$0-numpitches \$0-numpitches_r
 number_of_pitches 0 -8 0 15 -262144 -1 -1 12 256;
 #X obj 106 326 bng 30 250 50 0 \$0-play empty play_sound 35 15 0 15
@@ -303,13 +303,13 @@ number_of_pitches 0 -8 0 15 -262144 -1 -1 12 256;
 -262144 -1 -1;
 #X obj 104 417 bng 30 250 50 0 \$0-click empty read_results 35 15 0
 15 -262144 -1 -1;
-#X obj 399 248 nbx 10 20 -1e+37 1e+37 0 0 empty \$0-elapsed_r pos_in_ms
-0 -8 0 15 -232576 -1 -1 0 256;
+#X obj 246 338 nbx 10 20 -1e+37 1e+37 0 0 empty \$0-elapsed_r pos_in_ms
+0 -8 0 15 -232576 -1 -1 90500 256;
 #X obj 112 527 nbx 10 20 0 128 0 0 \$0-offset \$0-offset_r starting_midi_note
 0 -8 0 15 -262144 -1 -1 60 256;
-#X obj 327 573 nbx 10 20 0 128 0 0 \$0-msthresh \$0-msthresh_r ms_thresh
-0 -8 0 15 -262144 -1 -1 100 256;
-#X obj 328 527 nbx 10 20 0 128 0 0 \$0-dbthresh \$0-dbthresh_r db_thresh
+#X obj 327 573 nbx 10 20 0 1000 0 0 \$0-msthresh \$0-msthresh_r ms_thresh
+0 -8 0 15 -262144 -1 -1 128 256;
+#X obj 328 527 nbx 10 20 0 500 0 0 \$0-dbthresh \$0-dbthresh_r db_thresh
 0 -8 0 15 -262144 -1 -1 50 256;
 #X obj 289 405 cnv 15 250 100 empty empty empty 20 12 0 14 -232576
 -66577 0;
@@ -327,13 +327,13 @@ number_of_pitches 0 -8 0 15 -262144 -1 -1 12 256;
 #X obj 104 372 bng 30 250 50 0 \$0-stop empty stop_sound 35 15 0 15
 -262144 -1 -1;
 #X obj 488 342 tgl 50 0 empty \$0-done_r done 0 -7 0 15 -232576 -1
--1 0 1;
+-1 1 1;
 #X obj 591 94 t b b b, f 21;
 #X obj 833 214 s \$0-done_r;
 #X msg 891 174 0;
 #X msg 829 184 1;
 #X obj 239 287 hsl 300 30 0 90702.9 0 0 empty \$0-progress_r progress
--2 -8 0 15 -232576 -1 -1 0 1;
+-2 -8 0 15 -232576 -1 -1 29900 1;
 #X connect 0 0 5 0;
 #X connect 0 1 5 1;
 #X connect 0 2 5 2;
